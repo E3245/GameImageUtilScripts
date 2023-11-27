@@ -36,7 +36,7 @@ namespace GameImageUtil
         /// <summary>
         /// Gets the Name of this Processor
         /// </summary>
-        public string Name { get { return "IW/MW4/MW5/MW6 Material to XCom 2"; } }
+        public string Name { get { return "MW5/MW6 Material to XCom 2"; } }
 
         /// <summary>
         /// Processes the provided image
@@ -62,7 +62,7 @@ namespace GameImageUtil
 						continue;
 					
                     // Diffuse/Spec
-                    if (line.StartsWith("unk_semantic_0x0", StringComparison.InvariantCultureIgnoreCase))
+                    if (line.StartsWith("unk_semantic_0x0", StringComparison.InvariantCultureIgnoreCase)) 
                     {
                         String[] strlist = line.Split(new char[] { ',' });
 						
@@ -73,7 +73,7 @@ namespace GameImageUtil
                     }
 					
 					// NOG
-					if (line.StartsWith("unk_semantic_0x4", StringComparison.InvariantCultureIgnoreCase))
+					if (	line.StartsWith("unk_semantic_0x4", StringComparison.InvariantCultureIgnoreCase))
                     {
                         String[] strlist = line.Split(new char[] { ',' });
 						
@@ -232,7 +232,7 @@ namespace GameImageUtil
         /// <returns>True if we can, otherwise False</returns>
         public bool CanProcessFile(string file, FileProcessorConfig config)
         {
-            return (file.Contains("xmaterial_"));
+            return (file.Contains("_images"));
         }
 
         /// <summary>
